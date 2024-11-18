@@ -1,18 +1,29 @@
-﻿using cookies_cookBook.Ingredients;
+﻿using cookies_cookBook.IngredientsNameSpace;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace cookies_cookBook
 {
-    static class CookieRecipes
+    public class CookieRecipes
     {
-       
-        public static void ListAll()
+      public List <Ingredients> IngredientsList { private get;  set; } = new List<Ingredients>();
+
+        public void AddList(Ingredients item)
         {
-            Console.WriteLine("this is a new recipe");
+            IngredientsList.Add(item);
+           
+        }
+        public  void ListAll()
+        {
+            foreach (var ingredient in IngredientsList)
+            {
+                Console.WriteLine($"ingredint:{ingredient.Name}");
+            }
         } 
     }
 }
